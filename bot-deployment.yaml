@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8webapi
+  namespace: gtg-chatbot
+  labels:
+    ResourceGroup: BR-Talent-AI-Apps
+spec:
+  selector:
+    matchLabels:
+      app: k8webapi
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: k8webapi
+    spec:
+      imagePullSecrets:
+      - name: acr-key
+      containers:
+      - name: k8webapi
+        image: talentappsacr.azurecr.io/k8webapi
+        ports:
+        - containerPort: 8080
