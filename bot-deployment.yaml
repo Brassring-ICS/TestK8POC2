@@ -4,7 +4,7 @@ metadata:
   name: k8webapi
   namespace: gtg-chatbot
   labels:
-    ResourceGroup: BR-Talent-AI-Apps
+    ResourceGroup: BR-AI-Apps-rg
 spec:
   selector:
     matchLabels:
